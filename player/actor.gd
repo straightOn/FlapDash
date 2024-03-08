@@ -26,6 +26,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_down") and started and velocity.y < dive_velocity:
 		velocity.y = dive_velocity
 	move_and_slide()
+	
+	if global_position.y > 1100 || global_position.y < -100:
+		wall_crash()
 
 func _unhandled_input(event):
 	if started && event.is_action_pressed("ui_right"):
