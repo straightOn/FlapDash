@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnss4tt73qlum"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_fmgbs"]
+[ext_resource type="PackedScene" uid="uid://bdr8pc6tgts5v" path="res://background.tscn" id="1_wfdtw"]
+[ext_resource type="PackedScene" uid="uid://u7u74ens2yvk" path="res://player/actor.tscn" id="2_6gw1o"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_fmgbs")
+
+[node name="Background" parent="." instance=ExtResource("1_wfdtw")]
+
+[node name="WallContainer" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Actor" parent="." instance=ExtResource("2_6gw1o")]
+unique_name_in_owner = true
+position = Vector2(200, 400)
+
+[node name="Camera2D" type="Camera2D" parent="Actor"]
+position = Vector2(228, 0)
+scale = Vector2(0.5, 0.5)
+limit_top = -200
+limit_bottom = 1200
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="GameOver" type="Label" parent="Actor"]
+unique_name_in_owner = true
+visible = false
+offset_left = -83.0
+offset_top = -44.0
+offset_right = 528.0
+offset_bottom = 27.0
+text = "GAME OVER
+<< PRESS ENTER >>"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WallCounter" type="Label" parent="Actor"]
+unique_name_in_owner = true
+visible = false
+offset_left = -87.0
+offset_top = -69.0
+offset_right = 535.0
+offset_bottom = -46.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

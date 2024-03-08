@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdr8pc6tgts5v"]
+
+[ext_resource type="Texture2D" uid="uid://otiv37k7p32c" path="res://assets/BG-sky.png" id="1_qppik"]
+[ext_resource type="Texture2D" uid="uid://cipllkno1jhqe" path="res://assets/BG-mountains.png" id="2_s6kxc"]
+
+[node name="Background" type="ParallaxBackground"]
+
+[node name="SkyLayer" type="ParallaxLayer" parent="."]
+position = Vector2(0, -250)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="SkyAsset" type="Sprite2D" parent="SkyLayer"]
+scale = Vector2(5, 5)
+texture = ExtResource("1_qppik")
+centered = false
+
+[node name="MountainsLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1280, 0)
+
+[node name="MountainsAsset" type="Sprite2D" parent="MountainsLayer"]
+scale = Vector2(5, 5)
+texture = ExtResource("2_s6kxc")
+centered = false
